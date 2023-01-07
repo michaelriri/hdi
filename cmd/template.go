@@ -1,4 +1,4 @@
-package main
+package cmd
 
 const TEMPLATE_PROMPT = `I am a command line assistant for the following platform: %s.
 Ask me what you want to do and I will translate it to command-line commands.
