@@ -1,7 +1,7 @@
 package main
 
 import (
-	"hdi/cmd"
+	"github.com/michaelriri/hdi/cmd"
 )
 
 func main() {

@@ -2,11 +2,12 @@ package cmd
 
 import (
 	"fmt"
-	"hdi/openai"
 	"os"
 	"runtime"
 	"strings"
 	"time"
+
+	"github.com/michaelriri/hdi/openai"
 
 	"github.com/briandowns/spinner"
 	"github.com/rs/zerolog"

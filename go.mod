@@ -1,4 +1,4 @@
-module hdi
+module github.com/michaelriri/hdi
 
 go 1.19
 
