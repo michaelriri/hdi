@@ -8,6 +8,8 @@ A GPT-3 powered command line assistant.
 
 Ask questions in the form: `hdi (how do i) <question>`
 
+`hdi` requires the `OPENAI_API_KEY` environment variable to be set to a valid OpenAI API key. More info can be found [here.](https://beta.openai.com/docs/api-reference/authentication)
+
 ## Installation
 
 Install using go:
