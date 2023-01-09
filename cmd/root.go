@@ -32,16 +32,13 @@ func setupLogging(level int) zerolog.Logger {
 }
 
 var rootCmd = &cobra.Command{
-	Use:   "hdi {question}...",
+	Use:   "hdi <question>...",
 	Short: "A GPT-3 powered command line assistant",
-	Long: `hdi ("how do I?") is a GPT-3 powered command line assistant.
 
-It uses the OpenAI API to answer questions like 'How do I remove all docker containers?'
-The GPT-3 model's answer is then shown in your shell.
-Info on the OpenAI API can be found at: https://openai.com/api`,
+	Example: `$ hdi remove all docker containers
+$ hdi execute a python script and end up in a repl
+$ hdi view the contents of a file`,
 
-	Example: `hdi remove all docker containers
-	docker rm $(docker ps -aq)`,
 	Args: cobra.MinimumNArgs(1),
 
 	Run: func(cmd *cobra.Command, args []string) {
@@ -52,7 +49,9 @@ Info on the OpenAI API can be found at: https://openai.com/api`,
 
 		secret, ok := os.LookupEnv("OPENAI_API_KEY")
 		if !ok {
-			log.Fatal().Msg("OPENAI_API_KEY not set")
+			fmt.Println("Required environment variable OPENAI_API_KEY is not set")
+			fmt.Println("See https://beta.openai.com/docs/api-reference/authentication for more information")
+			os.Exit(1)
 		}
 		log.Info().Str("secret", secret).Msg("using OPENAI_API_KEY")
 
