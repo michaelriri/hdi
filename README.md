@@ -15,7 +15,7 @@ Ask questions in the form: `hdi (how do i) <question>`
 Install using go:
 
 ```
-go get github.com/michaelriri/hdi
+go install github.com/michaelriri/hdi@latest
 ```
 
 or download a [binary](https://github.com/michaelriri/hdi/releases) and add it to your path.
